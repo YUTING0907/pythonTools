@@ -1,0 +1,17 @@
+2024-12-25 18:09:44,979 - WARNING - weibo.py[:187] - 不存在D:\0000_Work\IdeaProjects\weibo-crawler\user_id_list.txt文件
+2024-12-25 18:12:14,144 - ERROR - weibo.py[:1403] - 'card_group'
+Traceback (most recent call last):
+  File "D:\0000_Work\IdeaProjects\weibo-crawler\weibo.py", line 1280, in get_one_page
+    weibos = weibos[0]["card_group"]
+KeyError: 'card_group'
+2024-12-25 18:31:53,163 - ERROR - weibo.py[:2166] - [Errno 13] Permission denied: 'D:\\0000_Work\\IdeaProjects\\weibo-crawler\\weibo\\很cool的小张\\3340707810.csv'
+Traceback (most recent call last):
+  File "D:\0000_Work\IdeaProjects\weibo-crawler\weibo.py", line 2152, in get_pages
+    self.write_data(wrote_count)
+  File "D:\0000_Work\IdeaProjects\weibo-crawler\weibo.py", line 2103, in write_data
+    self.write_csv(wrote_count)
+  File "D:\0000_Work\IdeaProjects\weibo-crawler\weibo.py", line 1506, in write_csv
+    self.csv_helper(result_headers, result_data, file_path)
+  File "D:\0000_Work\IdeaProjects\weibo-crawler\weibo.py", line 1523, in csv_helper
+    with open(file_path, "a", encoding="utf-8-sig", newline="") as f:
+PermissionError: [Errno 13] Permission denied: 'D:\\0000_Work\\IdeaProjects\\weibo-crawler\\weibo\\很cool的小张\\3340707810.csv'
