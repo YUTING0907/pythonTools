@@ -37,7 +37,7 @@
 
 最终这个需求的人工标注量大幅减少，减少了 90%，模型交付时间显著缩短，而模型效果比原来提高 20%。最令业务方最满意的是标注量和交付时间的减少，这意味着整个系统更加敏捷，应对变化的效率更高。
 
-[代码](https://github.com/YUTING0907/pythonTools/blob/main/llm/auto_generate_tag.py)
+[大模型自助打标Code](https://github.com/YUTING0907/pythonTools/blob/main/llm/auto_generate_tag.py)
 
 #### 总结：
 
@@ -48,8 +48,7 @@
 
 
 ### 场景二（欺诈调查助手）：
-
-
+![image](https://github.com/user-attachments/assets/7d6ce731-e704-4eed-b586-3c16c8e8fa9d)
 
 第一个场景是反欺诈调查的 copilot，通过与欺诈调查员的对话来解决相关问题。利用 GraphRAG 技术
 
@@ -66,9 +65,27 @@
 
 4.图关系抽取：预置 prompt 提取领域文档中的表信息和关联关系。
 
+[欺诈调查助手code](https://github.com/YUTING0907/pythonTools/blob/main/llm/fraud_investigation_copilot.py)
 
+智能体落地步骤可以总结为：
 
-![image](https://github.com/user-attachments/assets/7d6ce731-e704-4eed-b586-3c16c8e8fa9d)
+第一步，针对具体模型的进行提效，通过大模型的通识和泛化能力，对小模型的构建实现提效。
+
+第二步，逐步将业务知识提炼、固化。
+
+原来可能是主管对员工，然后员工去找 Copilot，后面在员工和 Copilot 协作的过程中，不断抽象业务和模式，并固定在链路定义中。
+
+最终实现主管和主要员工通过操作一个具有决策能力的类 AGI 系统，来完成日常的模型构造、案件调查、个案分析、团伙排查等各种任务。
+
+业务人员在发现了一些业务中新的现象之后，会去尝试总结成提示词，然后去引导中间的 Agent 去挖掘数据、生成数据，以及做一些对应的分析汇总。
+通过这个分析汇总生成新的训练数据和蒸馏更加有效的模型，然后部署到我们线上的实时系统中去。过程中会对运行结果进行实时的统计和监控，然后把结果和一些异常的个案汇总到人工层。这就是我们希望实现的智能体系统的结构
+
+### 场景三（基于ES的RAG外挂知识库）：
+实现代码：
+
+![image](https://github.com/user-attachments/assets/dd10a6e8-732c-45f9-b721-30703e0ae882)
+
+![image](https://github.com/user-attachments/assets/3b10ede3-80cf-4be9-94e4-7cf572d8d129)
 
 
 
@@ -76,3 +93,4 @@
 
 ### Reference
 [1] Lilian Weng (2023, June 23).  LLM Powered Autonomous Agents  https://lilianweng.github.io/posts/2023-06-23-agent/
+[2] https://mp.weixin.qq.com/s/HdqvR_x56la8Hg38wU-img
